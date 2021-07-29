@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node server/app.ts"
+    "start": "ts-node server/app.ts",
+    "heroku-postbuild": "npx prisma db push"
   },
   "repository": {
     "type": "git",
