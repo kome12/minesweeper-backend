@@ -1,3 +1,4 @@
+import cors from "cors";
 import express from "express";
 import { appRouter } from "./router";
 const app = express();
@@ -7,6 +8,7 @@ const port = 3001;
 //   res.send("Hello World!");
 // });
 app.use(express.json());
+app.use(cors());
 
 app.use(appRouter);
 
