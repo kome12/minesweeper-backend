@@ -34,10 +34,8 @@ export const getBestGamesByLevel = async (req: Request, res: Response) => {
   }
 };
 
-// export const createGame = async (newGame: Prisma.GamesCreateInput): Promise<Games> => {
 export const createGame = async (req: Request, res: Response) => {
   try {
-    console.log("req.body");
     const { name, time, level } = req.body;
     const createdGame = await prisma.games.create({
       data: {
@@ -46,7 +44,6 @@ export const createGame = async (req: Request, res: Response) => {
         level,
       },
     });
-    console.log("createdGame:", createdGame);
     res.send({ info: "Successfully created game", data: createdGame });
   } catch (error) {
     res.send({ info: `Error creating game: ${error}`, error });
